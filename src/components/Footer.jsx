@@ -5,12 +5,12 @@ const Footer = () => {
   const socialLinks = [
     {
       name: 'GitHub',
-      url: 'https://github.com',
+      url: 'https://github.com/Satish4149',
       icon: <FaGithub className="w-5 h-5" />
     },
     {
       name: 'LinkedIn',
-      url: 'https://linkedin.com',
+      url: ' https://www.linkedin.com/in/satish-yadav-367376229',
       icon: <FaLinkedin className="w-5 h-5" />
     },
     {
@@ -20,7 +20,7 @@ const Footer = () => {
     },
     {
       name: 'Email',
-      url: 'mailto:example@example.com',
+      url: 'mailto:yadavsatish1609@gmail.com',
       icon: <FaEnvelope className="w-5 h-5" />
     }
   ]

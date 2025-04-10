@@ -168,7 +168,7 @@ const Contact = ({ setActiveSection }) => {
                 Submission Failed
               </h3>
               <p className="text-gray-600 dark:text-gray-400 mb-6">
-                There was an error sending your message. Please try again later or contact me directly at email@example.com
+                There was an error sending your message. Please try again later or contact me directly at yadavsatish1609.com
               </p>
               <button
                 onClick={() => setSubmitStatus(null)}

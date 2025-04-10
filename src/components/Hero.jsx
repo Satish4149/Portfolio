@@ -65,8 +65,8 @@ const Hero = ({ setActiveSection }) => {
             transition={{ delay: 1, duration: 0.8 }}
           >
             <a
-              href="/s.pdf" // Replace with your actual resume file path
-              download="s.pdf"
+              href="/image/SatishYadav_Resume_ATS00.pdf" // Replace with your actual resume file path
+              download="/image/SatishYadav_Resume_ATS00.pdf"
               className="inline-block px-8 py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg shadow-lg transition-colors duration-300"
             >
               Download Resume
