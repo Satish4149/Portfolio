@@ -61,18 +61,19 @@ const Hero = ({ setActiveSection }) => {
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0 }} 
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1, duration: 0.8 }}
-          >
-            <a
-              href="/image/SatishYadav_Resume_ATS00.pdf" 
-              download="SatishYadav_Resume_ATS00.pdf"
-              className="inline-block px-8 py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg shadow-lg transition-colors duration-300"
-            >
-              Download Resume
-            </a>
-          </motion.div>
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 1, duration: 0.8 }}
+    >
+      {/* This button downloads the resume */}
+      <a
+        href="/image/SatishYadav_Resume_ATS00.pdf"
+        download
+        className="inline-block px-8 py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg shadow-lg transition-colors duration-300"
+      >
+        Download Resume
+      </a>
+    </motion.div>
 
         </motion.div>
 
