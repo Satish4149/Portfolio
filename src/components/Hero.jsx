@@ -66,7 +66,7 @@ const Hero = ({ setActiveSection }) => {
           >
             <a
               href="/image/SatishYadav_Resume_ATS00.pdf" // Replace with your actual resume file path
-              download="/image/SatishYadav_Resume_ATS00.pdf"
+              download="SatishYadav_Resume_ATS00.pdf"
               className="inline-block px-8 py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg shadow-lg transition-colors duration-300"
             >
               Download Resume
