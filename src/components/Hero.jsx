@@ -16,15 +16,6 @@ const Hero = ({ setActiveSection }) => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [setActiveSection])
 
-  const handleDownload = () => {
-    const link = document.createElement('a');
-    link.href = '/image/SatishYadav_Resume_ATS00.pdf';
-    link.download = 'SatishYadav_Resume_ATS00.pdf'; 
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 py-20 md:py-0 flex flex-col md:flex-row items-center w-full">
@@ -70,17 +61,18 @@ const Hero = ({ setActiveSection }) => {
           </motion.p>
 
           <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ delay: 1, duration: 0.8 }}
-    >
-      <button
-        onClick={handleDownload}
-        className="inline-block px-8 py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg shadow-lg transition-colors duration-300"
-      >
-        Download Resume
-      </button>
-    </motion.div>
+            initial={{ opacity: 0 }} 
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1, duration: 0.8 }}
+          >
+            <a
+              href="/image/SatishYadav_Resume_ATS00.pdf" 
+              download="SatishYadav_Resume_ATS00.pdf"
+              className="inline-block px-8 py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg shadow-lg transition-colors duration-300"
+            >
+              Download Resume
+            </a>
+          </motion.div>
 
         </motion.div>
 
