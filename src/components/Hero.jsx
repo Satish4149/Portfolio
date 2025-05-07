@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { useEffect, Suspense, lazy } from 'react'
+import { useEffect, Suspense, lazy, useState } from 'react'
 
 // Lazy load the 3D component
 const TechSphereBackground = lazy(() => import('./TechSphereBackground'))
@@ -15,11 +15,21 @@ const Hero = ({ setActiveSection }) => {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [setActiveSection])
+  const [showPopup, setShowPopup] = useState(false)
+
+  const handleDownload = () => {
+    setShowPopup(true)
+    setTimeout(() => {
+      setShowPopup(false)
+    }, 2000) // popup disappears after 2 seconds
+  }
+
+
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 py-20 md:py-0 flex flex-col md:flex-row items-center w-full">
-        
+
         {/* Left Side - Text Content */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -33,7 +43,7 @@ const Hero = ({ setActiveSection }) => {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="text-blue-500 dark:text-blue-400 font-medium mb-4"
           >
-            Hi, my name is
+            Full-Stack Developer
           </motion.p>
           <motion.h1
             initial={{ opacity: 0 }}
@@ -41,7 +51,7 @@ const Hero = ({ setActiveSection }) => {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4"
           >
-            Satish Yadav.
+            Hi, I'm  Satish Yadav From India
           </motion.h1>
           <motion.h2
             initial={{ opacity: 0 }}
@@ -60,30 +70,40 @@ const Hero = ({ setActiveSection }) => {
             I'm a full-stack developer specializing in building exceptional digital experiences. Currently focused on building accessible, human-centered products.
           </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0 }} 
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1, duration: 0.8 }}
-          >
-            <a
-              href="/image/SatishYadav_Resume_ATS00.pdf" 
-              download="SatishYadav_Resume_ATS00.pdf"
-              className="inline-block px-8 py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg shadow-lg transition-colors duration-300"
+
+          <div className="relative">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1, duration: 0.8 }}
             >
-              Download Resume
-            </a>
-          </motion.div>
+              <a
+                href="/image/SatishYadav_Resume_ATS00.pdf"
+                download="SatishYadav_Resume_ATS00.pdf"
+                onClick={handleDownload}
+                className="inline-block px-8 py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg shadow-lg transition-colors duration-300"
+              >
+                Download Resume
+              </a>
+            </motion.div>
+
+            {showPopup && (
+              <div className="absolute top-0 right-0 mt-2 mr-2 bg-green-500 text-white px-4 py-2 rounded shadow-lg animate-bounce">
+                ✅ Download started!
+              </div>
+            )}
+          </div>
 
         </motion.div>
 
         {/* Right Side - 3D Model */}
-        <div className="w-full md:w-1/2 flex justify-center md:justify-end">
+        {/* <div className="w-full md:w-1/2 flex justify-center md:justify-end">
           <Suspense fallback={
             <div className="w-full h-full bg-gradient-to-b from-orange-500/20 to-transparent" />
           }>
             <TechSphereBackground />
           </Suspense>
-        </div>
+        </div> */}
       </div>
 
       {/* Scroll Indicator */}

@@ -5,18 +5,17 @@ const projects = [
   {
     id: 1,
     title: 'RealEstate Website',
-    description: 'A full-featured e-commerce platform with product listings, cart functionality, and secure checkout.',
-    tags: ['React', 'Node.js', 'MongoDB', 'Django'],
-    image: 'https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    description: 'A full-featured real estate platform with user authentication, property listings, advanced search filters, virtual tours, and secure options to buy, rent, or sell all types of properties.',
+    tags: ['React','Tailwin CSS', 'MongoDB', 'Django'],
+    image:'/image/houzaa.png',
     link: 'http://customer.houzza.in/',
     github: '#'
   },
   {
     id: 2,
     title: 'Solarplate installation website',
-    description: 'A productivity application for managing tasks with drag-and-drop functionality and team collaboration.',
-    tags: ['React', 'Bootstrap', 'Tailwind CSS'],
-    image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    description: 'A professional website for showcasing solar plate installation services, including project galleries, customer testimonials, and online inquiries.',    tags: ['Bootstrap', 'Tailwind CSS'],
+    image: '/image/solareach.png',
     link: 'https://solareachsolutions.com/',
     github: '#'
   },
@@ -85,7 +84,7 @@ const Projects = ({ setActiveSection }) => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-auto rounded-lg shadow-lg"
+                  className="w-full h-[350px] rounded-lg shadow-lg"
                 />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/50 rounded-lg">
                   <div className="flex space-x-4">
@@ -98,14 +97,14 @@ const Projects = ({ setActiveSection }) => {
                       Live Demo
                     </a>
 
-                    <a
+                    {/* <a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="px-4 py-2 bg-gray-800 hover:bg-gray-700 text-white rounded-lg transition-colors duration-300"
                     >
                       View Code
-                    </a>
+                    </a> */}
                   </div>
                 </div>
               </div>

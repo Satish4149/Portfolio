@@ -1,27 +1,27 @@
 import { motion } from 'framer-motion'
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa'
-
+import { FaGithub, FaLinkedin,  FaEnvelope } from 'react-icons/fa'
+import { FaXTwitter } from 'react-icons/fa6';
 const Footer = () => {
   const socialLinks = [
     {
       name: 'GitHub',
       url: 'https://github.com/Satish4149',
-      icon: <FaGithub className="w-5 h-5" />
+      icon: <FaGithub className="w-7 h-7" />
     },
     {
       name: 'LinkedIn',
-      url: ' https://www.linkedin.com/in/satish-yadav-367376229',
-      icon: <FaLinkedin className="w-5 h-5" />
+      url: 'https://www.linkedin.com/in/satish-yadav-367376229/',
+      icon: <FaLinkedin className="w-7 h-7" />
     },
     {
       name: 'Twitter',
-      url: 'https://twitter.com',
-      icon: <FaTwitter className="w-5 h-5" />
+      url: 'https://x.com/YadavSatish4149?t=zGixCJQ-5e7j4Cc3X1PwAQ&s=09',
+      icon: <FaXTwitter className="w-7 h-7" />
     },
     {
       name: 'Email',
       url: 'mailto:yadavsatish1609@gmail.com',
-      icon: <FaEnvelope className="w-5 h-5" />
+      icon: <FaEnvelope className="w-7 h-7" />
     }
   ]
 
@@ -66,7 +66,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
           <p>
-            &copy; {new Date().getFullYear()} John Doe. All rights reserved.
+            &copy; {new Date().getFullYear()} Satish Yadav. All rights reserved.
           </p>
           <p className="mt-2">
             Built with React, Tailwind CSS, and Framer Motion
