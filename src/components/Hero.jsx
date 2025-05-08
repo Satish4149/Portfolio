@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion'
-import { useEffect, Suspense, lazy, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 // Lazy load the 3D component
-const TechSphereBackground = lazy(() => import('./TechSphereBackground'))
+// const TechSphereBackground = lazy(() => import('./TechSphereBackground'))
 
 const Hero = ({ setActiveSection }) => {
   useEffect(() => {
@@ -104,6 +104,7 @@ const Hero = ({ setActiveSection }) => {
             <TechSphereBackground />
           </Suspense>
         </div> */}
+
       </div>
 
       {/* Scroll Indicator */}
