@@ -1,11 +1,11 @@
-// components/ThreeDModel.jsx
+
 import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import { useRef } from 'react'
 
 function FloatingShape() {
   const mesh = useRef()
-  
+
   useFrame(() => {
     mesh.current.rotation.x = mesh.current.rotation.y += 0.005
   })
@@ -13,10 +13,10 @@ function FloatingShape() {
   return (
     <mesh ref={mesh}>
       <torusGeometry args={[1, 0.4, 16, 32]} />
-      <meshStandardMaterial 
-        color="#3b82f6" 
-        transparent 
-        opacity={0.6} 
+      <meshStandardMaterial
+        color="#3b82f6"
+        transparent
+        opacity={0.6}
         wireframe={false}
       />
     </mesh>
@@ -31,7 +31,7 @@ export default function ThreeDModel() {
         <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
         <pointLight position={[-10, -10, -10]} />
         <FloatingShape />
-        <OrbitControls 
+        <OrbitControls
           enableZoom={false}
           enablePan={false}
           enableRotate={false}

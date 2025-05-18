@@ -26,20 +26,20 @@ const Header = ({ activeSection, setActiveSection }) => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed w-full z-50 py-4 px-6 transition-all duration-300 ${
-        scrolled ? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-md' : 'bg-transparent'
-      }`}
+      className={`fixed w-full z-50 py-4 px-6 transition-all duration-300 ${scrolled ? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-md' : 'bg-transparent'
+        }`}
     >
       <div className="max-w-6xl mx-auto flex justify-between items-center">
-        <motion.a 
-          href="#home" 
-          className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-blue-700 bg-clip-text text-transparent"
+        <motion.a
+          href="#home"
+          className="text-3xl font-bold italic bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent font-[cursive] tracking-wider"
           whileHover={{ scale: 1.05 }}
           onClick={() => setActiveSection('home')}
           aria-label="Home"
         >
-          Satish Yadav
+          𝒮𝒶𝓉𝒾𝓈𝒽
         </motion.a>
+
 
         {/* Desktop Navigation */}
         <nav className="hidden md:block">
@@ -48,11 +48,11 @@ const Header = ({ activeSection, setActiveSection }) => {
               <li key={link.id}>
                 <motion.a
                   href={`#${link.id}`}
-                  className={`relative px-2 py-1 text-sm font-medium transition-colors ${
-                    activeSection === link.id
-                      ? 'text-blue-500 dark:text-blue-400'
-                      : 'text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100'
-                  }`}
+                  className={`relative px-2 py-1 text-2xl font-medium transition-colors ${activeSection === link.id
+                    ? 'text-blue-500 dark:text-blue-400'
+                    : 'text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100'
+                    }`}
+                  style={{ fontFamily: "'Dancing Script', cursive", fontWeight: 'normal' }}
                   onClick={() => setActiveSection(link.id)}
                   whileHover={{ scale: 1.05 }}
                   aria-current={activeSection === link.id ? 'page' : undefined}
@@ -71,8 +71,9 @@ const Header = ({ activeSection, setActiveSection }) => {
           </ul>
         </nav>
 
+
         {/* Mobile Menu Button */}
-        <button 
+        <button
           className="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"
@@ -84,6 +85,7 @@ const Header = ({ activeSection, setActiveSection }) => {
             <FiMenu className="h-6 w-6 text-gray-600 dark:text-gray-400" />
           )}
         </button>
+
 
         {/* Mobile Navigation */}
         <AnimatePresence>
@@ -100,11 +102,11 @@ const Header = ({ activeSection, setActiveSection }) => {
                   <li key={link.id}>
                     <motion.a
                       href={`#${link.id}`}
-                      className={`block px-4 py-2 rounded-md transition-colors ${
-                        activeSection === link.id
-                          ? 'bg-blue-500/10 text-blue-500 dark:text-blue-400'
-                          : 'text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-800'
-                      }`}
+                      className={`block px-4 py-2  text-2xl rounded-md transition-colors ${activeSection === link.id
+                        ? 'bg-blue-500/10 text-blue-500 dark:text-blue-400'
+                        : 'text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-800'
+                        }`}
+                      style={{ fontFamily: "'Great Vibes', cursive", fontWeight: 'normal' }}
                       onClick={() => handleMobileNavClick(link.id)}
                       whileHover={{ scale: 1.02 }}
                       aria-current={activeSection === link.id ? 'page' : undefined}

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { FaGithub, FaLinkedin,  FaEnvelope } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaEnvelope ,FaInstagram} from 'react-icons/fa'
 import { FaXTwitter } from 'react-icons/fa6';
 const Footer = () => {
   const socialLinks = [
@@ -18,6 +18,12 @@ const Footer = () => {
       url: 'https://x.com/YadavSatish4149?t=zGixCJQ-5e7j4Cc3X1PwAQ&s=09',
       icon: <FaXTwitter className="w-7 h-7" />
     },
+    {
+      name: 'Instagram',
+      url: 'https://www.instagram.com/itz_satish.4149/',
+      icon: <FaInstagram className="w-7 h-7" />
+    },
+
     {
       name: 'Email',
       url: 'mailto:yadavsatish1609@gmail.com',

@@ -1,35 +1,38 @@
 import { motion } from 'framer-motion'
 import { useEffect } from 'react'
-
+import { toast, ToastContainer, Slide } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 const projects = [
   {
     id: 1,
     title: 'RealEstate Website',
     description: 'A full-featured real estate platform with user authentication, property listings, advanced search filters, virtual tours, and secure options to buy, rent, or sell all types of properties.',
-    tags: ['React','Tailwin CSS', 'MongoDB', 'Django'],
-    image:'/image/houzaa.png',
+    tags: ['React', 'Tailwin CSS', 'MongoDB', 'Django'],
+    image: '/image/houzaa.png',
     link: 'http://customer.houzza.in/',
     github: '#'
   },
   {
     id: 2,
     title: 'Solarplate installation website',
-    description: 'A professional website for showcasing solar plate installation services, including project galleries, customer testimonials, and online inquiries.',    tags: ['Bootstrap', 'Tailwind CSS'],
+    description: 'A professional website for showcasing solar plate installation services, including project galleries, customer testimonials, and online inquiries.', tags: ['Bootstrap', 'Tailwind CSS'],
     image: '/image/solareach.png',
     link: 'https://solareachsolutions.com/',
     github: '#'
   },
+
   {
     id: 3,
-    title: 'Weather Dashboard',
-    description: 'A weather application that displays current conditions and forecasts using data from a weather API.',
-    tags: ['JavaScript', 'API', 'CSS', 'Geolocation'],
-    image: 'https://images.unsplash.com/photo-1601134467661-3d775b999c8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    title: 'Book Management System',
+    description: 'A Book Management System enabling easy handling of a library\'s book inventory through features like adding, viewing, updating, and removing books. It includes a user-friendly interface with search and filtering capabilities, streamlining library tasks and ensuring precise data management.',
+    tags: ['Core java', 'JavaScript', 'CRUD', 'LocalStorage', 'HTML', 'CSS'],
+    image: '/image/book.JPG',
     link: '#',
     github: '#'
+
+
   }
 ]
-
 const Projects = ({ setActiveSection }) => {
   useEffect(() => {
     const projectsSection = document.getElementById('projects')
@@ -53,8 +56,31 @@ const Projects = ({ setActiveSection }) => {
     }
   }, [setActiveSection])
 
+  const handleLinkClick = (link) => {
+    if (!link || link === '#' || link === '') {
+      toast.info('Live demo not available. This project is only available locally.', {
+        autoClose: 5000,
+        position: 'top-center',
+        theme: 'colored',
+        transition: Slide,
+        className: 'text-center font-medium text-lg'
+      })
+    } else {
+      window.open(link, '_blank', 'noopener,noreferrer')
+    }
+  }
+
   return (
     <section id="projects" className="py-20 px-6">
+      {/* Toast container with full control */}
+      <ToastContainer
+        limit={1}
+        newestOnTop
+        closeOnClick
+        pauseOnHover
+        draggable
+      />
+
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -88,23 +114,13 @@ const Projects = ({ setActiveSection }) => {
                 />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/50 rounded-lg">
                   <div className="flex space-x-4">
-                    <a
-                      href={project.link.startsWith('http') ? project.link : `https://${project.link}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <button
+                      type="button"
+                      onClick={() => handleLinkClick(project.link)}
                       className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors duration-300"
                     >
                       Live Demo
-                    </a>
-
-                    {/* <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-4 py-2 bg-gray-800 hover:bg-gray-700 text-white rounded-lg transition-colors duration-300"
-                    >
-                      View Code
-                    </a> */}
+                    </button>
                   </div>
                 </div>
               </div>
@@ -127,10 +143,9 @@ const Projects = ({ setActiveSection }) => {
                   ))}
                 </div>
                 <div className="flex space-x-4">
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <button
+                    type="button"
+                    onClick={() => handleLinkClick(project.link)}
                     className="text-blue-500 dark:text-blue-400 hover:underline flex items-center"
                   >
                     <svg
@@ -148,29 +163,9 @@ const Projects = ({ setActiveSection }) => {
                       />
                     </svg>
                     Live Demo
-                  </a>
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-600 dark:text-gray-400 hover:underline flex items-center"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5 mr-1"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-                      />
-                    </svg>
-                    View Code
-                  </a>
+                  </button>
+
+
                 </div>
               </div>
             </motion.div>

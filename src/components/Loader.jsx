@@ -25,15 +25,15 @@ const Loader = () => {
           <div className="absolute inset-0 bg-teal-500/80 rounded-lg" style={{ transform: 'rotateX(90deg) translateZ(30px)' }} />
           <div className="absolute inset-0 bg-amber-500/80 rounded-lg" style={{ transform: 'rotateX(-90deg) translateZ(30px)' }} />
         </motion.div>
-        
+
         {/* Text */}
         <motion.div
           className="absolute -bottom-10 left-0 right-0 text-center"
           animate={{ opacity: [0.6, 1, 0.6] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
-          <span className="text-lg font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-            Loading Portfolio
+          <span className="text-lg font-bold bg-gradient-to-r  from-black via-red-500 to-green-500 bg-clip-text text-transparent">
+            Getting things ready 🚀
           </span>
         </motion.div>
       </div>

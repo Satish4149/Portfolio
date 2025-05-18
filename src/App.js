@@ -5,6 +5,7 @@ import Hero from './components/Hero'
 import About from './components/About'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
+import Credential from './components/Credential'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import ThemeToggle from './components/ThemeToggle'
@@ -73,6 +74,7 @@ function App() {
               <About setActiveSection={setActiveSection} />
               <Skills setActiveSection={setActiveSection} />
               <Projects setActiveSection={setActiveSection} />
+              <Credential setActiveSection={setActiveSection} />
               <Contact setActiveSection={setActiveSection} />
             </AnimatePresence>
           </main>
